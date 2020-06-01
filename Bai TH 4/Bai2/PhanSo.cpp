@@ -4,12 +4,14 @@ using namespace std;
 
 istream &operator>>(istream &is, PhanSo &ps)
 {
-	cin >> ps.m_iTuSo;
-	cin >> ps.m_iMauSo;
+	is >> ps.m_iTuSo;
+	is >> ps.m_iMauSo;
+	return is;
 }
 ostream &operator<<(ostream &os, PhanSo ps)
 {
-	cout << ps.m_iTuSo << " / " << ps.m_iMauSo << endl;
+	os << ps.m_iTuSo << " / " << ps.m_iMauSo << endl;
+	return os;
 }
 PhanSo PhanSo::operator+(const PhanSo &a) //const se khong thay doi gia tri cua a (luc nay a la phanso truyen vao)
 {
