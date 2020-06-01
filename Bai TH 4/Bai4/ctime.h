@@ -26,58 +26,81 @@ ostream &operator<<(ostream &os, ctime &ps)
 }
 ctime ctime::operator+(int giays)
 {
-    if (giay + giays >= 60)
+    ctime kq = *this;
+    if (kq.giay + giays >= 60)
     {
         if (giays > 60) //truong hop 60 x2 x3 x4...
         {
-            while (giays <= 60)
+            while (giays >= 60)
             {
-                if (giay + giays > 60) //xet lai vì lần 2 (3) sẽ giay sẽ biến đổi
+                if (kq.giay + giays > 60) //xet lai vì lần 2 (3) sẽ giay sẽ biến đổi
                 {
-                    giay = giay + giays - 60;
-                    if (phut < 59)
-                        phut++;
-                    else if (gio < 23)
-                        gio++;
+                    int t = kq.giay;
+                    kq.giay = kq.giay + giays - 60; //phat sinh truong hop >60s
+                    if (kq.giay > 59)
+                    {
+                        kq.giay = t;
+                    }
+
+                    if (kq.phut < 59)
+                        kq.phut++;
+                    else if (kq.gio < 23)
+                        kq.gio++;
                     else
-                        gio = 0;
+                        kq.gio = 0;
                 }
                 else
                 {
-                    giay += giays;
+                    kq.giay += giays;
                 }
                 giays -= 60;
             }
         }
         else //truong hop 60 x1
         {
-            giay = giay + giays - 60;
-            if (phut < 59)
-                phut++;
-            else if (gio < 23)
-                gio++;
+            kq.giay = kq.giay + giays - 60;
+            if (kq.phut < 59)
+                kq.phut++;
+            else if (kq.gio < 23)
+                kq.gio++;
             else
-                gio = 0;
+                kq.gio = 0;
         }
     }
     else
     {
-        giay += giays;
+        kq.giay += giays;
     }
-    return (*this);
+    return kq;
 }
-ctime ctime::operator-(int giays) //tamthoichuaxong
+ctime ctime::operator-(int giays) //cach operator+ ở trên làm hơi ngáo nhưng vẫn đúng nha T_T
 {
-    if (giay - giays >= 0)
+    ctime kq = *this; //cho kq = voi thoigian hien tai(cua class hien tai)
+    kq.giay = giay - giays;
+    while (kq.giay < 0)
     {
-        giay -= giays;
+        if (kq.phut != 0)
+        {
+            kq.phut--;
+        }
+        else
+        {
+            if (kq.gio != 0)
+            {
+                kq.phut = 0;
+                kq.gio--;
+            }
+            else
+            {
+                kq.phut = 0;
+                kq.gio = 23;
+            }
+        }
+
+        kq.giay += 60;
     }
-    else
-    {
-        giay = 0;
-        if (phut != 0)
-    }
-    return (*this);
+
+    return kq;
 }
 ctime ctime::operator++()
 {
