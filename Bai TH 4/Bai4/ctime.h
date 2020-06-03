@@ -77,7 +77,7 @@ ctime ctime::operator-(int giays) //cach operator+ ở trên làm hơi ngáo nh�
 {
     ctime kq = *this; //cho kq = voi thoigian hien tai(cua class hien tai)
     kq.giay = giay - giays;
-    while (kq.giay < 0)
+    while (kq.giay < -59)
     {
         if (kq.phut != 0)
         {
@@ -98,6 +98,10 @@ ctime ctime::operator-(int giays) //cach operator+ ở trên làm hơi ngáo nh�
         }
 
         kq.giay += 60;
+    }
+    if (kq.giay < 0)
+    {
+        /* code */
     }
 
     return kq;
