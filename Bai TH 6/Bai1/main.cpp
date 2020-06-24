@@ -2,6 +2,7 @@
 // Viết chương trình cho phép quản lý một danh sách các loại đối tượng kể trên.
 #include <iostream>
 #include "sach.h"
+#include "sach.cpp"
 #include "sgk.h"
 #include "tieuthuyet.h"
 #include "tapchi.h"
@@ -16,7 +17,7 @@ int main(){
     {
         cout<<"Chon 1 de nhap sach giao khoa"<<endl;
         cout<<"Chon 2 de nhap tieu thuyet"<<endl;
-        cout<<"Chon 3 de nhap tap chi"<<endl;
+        cout<<"Chon 3 de nhap tap chi"<<endl<<endl;
         cin>>chon;
         switch (chon)
         {
@@ -32,8 +33,9 @@ int main(){
         }
         DS[i]->Nhap();
     }
-    
-
-    
+    for (int i = 0; i < soluongsach; i++)
+    {
+        DS[i]->Xuat();
+    }
     return 0;
 }
