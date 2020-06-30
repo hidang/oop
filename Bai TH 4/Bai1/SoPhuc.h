@@ -5,8 +5,9 @@ class SoPhuc
 {
 private:
 	float a1, a2;
-
+	int *n;
 public:
+
 	//void Nhap();
 	friend istream &operator>>(istream &is, SoPhuc &sp);
 	//void Xuat();
@@ -20,4 +21,5 @@ public:
 	float Geta2();
 	void Seta1(float ane);
 	void Seta2(float bne);
+	
 };
