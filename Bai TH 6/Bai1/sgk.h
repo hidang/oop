@@ -1,12 +1,12 @@
 #pragma once
-
+#include "sach.h"
+#include <iostream>
+using namespace std;
 class sgk:public sach
 {
 private:
     int lop;
 public:
-    virtual void Nhap();
-    virtual void Xuat();
+    void Nhap();
+    void Xuat();
 };
-
-

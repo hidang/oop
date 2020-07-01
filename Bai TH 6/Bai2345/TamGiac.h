@@ -4,17 +4,17 @@
 class TamGiac : public DaGiac
 {
     public :
-    void nhap();
-    void xuat();
-    void Tinh_Tien();
-    void Thu_phong();
-    void Quay();
+        void nhap();
+        void xuat();
+        void Tinh_Tien();
+        void Thu_phong();
+        void Quay();
 
 };
 
 void TamGiac::nhap()
 {
-    so_luong_diem = 3;
+    SoLuongDiem = 3;
     DaGiac::A[0].nhap();
     DaGiac::A[1].nhap();
     DaGiac::A[2].nhap();

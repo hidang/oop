@@ -4,8 +4,11 @@
 #include "sach.h"
 #include "sach.cpp"
 #include "sgk.h"
+#include "sgk.cpp"
 #include "tieuthuyet.h"
+#include "tieuthuyet.cpp"
 #include "tapchi.h"
+#include "tapchi.cpp"
 using namespace std;
 int main(){
 

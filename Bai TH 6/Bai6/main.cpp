@@ -1,25 +1,45 @@
-// 6.	Áp dụng liên kết động để làm lại bài tập tuần 7 (bài nông trại). 
-// Hãy so sánh giữa 2 cách làm (không dùng liên kết động và có dùng liên kết động) và 
-// rút ra ưu điểm của cách dùng liên kết động.
-
-// 6.	Một nông trại chăn nuôi có 3 loại gia súc: bò, cừu, và dê. Mỗi loại gia súc đều có thể sinh con, cho sữa và phát ra tiếng kêu riêng của chúng. Khi đói, các gia súc sẽ phát ra tiếng kêu để đòi ăn. Sau một thời gian chăn nuôi, người chủ nông trại muốn thống kê xem trong nông trại có bao nhiêu gia súc ở mỗi loại, tổng số lit sữa mà tất cả các gia súc của ông đã cho. 
-// Áp dụng kế thừa, xây dựng chương trình cho phép người chủ nông trại nhập vào số lượng gia súc ban đầu ở mỗi loại.
-// a.	Một hôm người chủ nông trại đi vắng, tất cả gia súc trong nông trại đều đói. Hãy cho biết những tiếng kêu nghe được trong nông trại.
-// b.	Chương trình sẽ đưa ra thống kê các thông tin người chủ mong muốn (nêu trên) sau một lứa sinh và một lược cho sữa của tất cả gia súc. Biết rằng:
-// -	Tất cả gia súc ở mỗi loại đều sinh con.
-// -	Số lượng sinh của mỗi gia súc là ngẫu nhiên.
-// -	Tất cả gia súc ở mỗi loại đều cho sữa.
-// -	Số lit sữa mỗi gia súc cho là ngẫu nhiên nhưng trong giới hạn sau:
-// 	Bò: 0 – 20 lít.
-// 	Cừu: 0 – 5 lít.
-
 #include <iostream>
-#include "nongtrai.h"
+#include "GiaSuc.h"
+#include "GiaSuc.cpp"
 
+#include "ConBo.h"
+#include "ConBo.cpp"
+
+#include "ConCuu.h"
+#include "ConCuu.cpp"
+
+#include "ConDe.h"
+#include "ConDe.cpp"
 using namespace std;
 
-int main(){
-    int n;
-    
+int main()
+{
+    GiaSuc *GS[50];
+    int n, chon;
+    cout<<"Nhap so luong gia suc: "<<endl;
+    cin >> n;
+    for (int i = 0; i < n; i++){
+        cout<<"chon 1 de nhap Bo"<<endl;
+        cout<<"chon 2 de nhap Cuu"<<endl;
+        cout<<"chon 3 de nhap De"<<endl;
+        cin>>chon;
+        switch (chon)
+        {
+        case 1:
+            GS[i] = new ConBo();
+            break;
+        
+        case 2:
+            GS[i] = new ConCuu();
+            break;
+
+        case 3:
+            GS[i] = new ConDe();
+            break;
+        GS[i]->Cho_sua();
+        GS[i]->Keu();
+        GS[i]->Sinh_con();
+    }
     return 0;
 }
+

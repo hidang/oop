@@ -4,14 +4,14 @@
 
 class HinhVuong : public DaGiac
 {
-    public :
+    public:
     void nhap();
     void xuat();
 };
 
 void HinhVuong::nhap()
 {
-    so_luong_diem = 4;
+    SoLuongDiem = 4;
     DaGiac::A[0].nhap();
     DaGiac::A[1].nhap();
     DaGiac::A[2].nhap();

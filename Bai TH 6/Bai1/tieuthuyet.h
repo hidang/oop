@@ -9,16 +9,6 @@ private:
     char theloai[50];
 
 public:
-    virtual void Nhap();
-    virtual void Xuat();
+    void Nhap();
+    void Xuat();
 };
-//tieuthuyet.cpp
-void tieuthuyet::Nhap(){
-    sach::Nhap();
-    cin.ignore();
-    cin.getline(theloai, 50);
-}
-void tieuthuyet::Xuat(){
-    sach::Xuat();
-    cout<<theloai<<endl;
-}

@@ -1,6 +1,4 @@
 #include "sach.h"
-#include <iostream>
-using namespace std;
 void sach::Nhap(){
     cout<<"Nhap ten sach: ";
     cin.ignore();

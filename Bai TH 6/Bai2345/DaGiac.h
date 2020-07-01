@@ -6,7 +6,7 @@ class DaGiac
 {
     protected:
         diem A[100];
-        int so_luong_diem;
+        int SoLuongDiem;
     public: 
     virtual void nhap();
     virtual void xuat();
@@ -17,8 +17,8 @@ class DaGiac
 
 void DaGiac::nhap()
 {
-    cin>>so_luong_diem;
-    for (int i = 0; i < so_luong_diem; i++)
+    cin>>SoLuongDiem;
+    for (int i = 0; i < SoLuongDiem; i++)
     {
         A[i].nhap();
     }
@@ -27,7 +27,7 @@ void DaGiac::nhap()
 
 void DaGiac::xuat()
 {
-    for (int i = 0; i< so_luong_diem; i++){
+    for (int i = 0; i< SoLuongDiem; i++){
         A[i].xuat();
     }
 }
@@ -38,7 +38,7 @@ void DaGiac::Tinh_tien()
     cin >> a >> b;
     cout << "Da giac sau khi tinh tien: " << endl;
 
-    for (int i = 0; i < this->so_luong_diem; i++)
+    for (int i = 0; i < this->SoLuongDiem; i++)
     {
         cout << "Dinh "
              << "thu " << i + 1 << endl;
@@ -52,7 +52,7 @@ void DaGiac::Quay()
     double rad;
     cin >> rad;
     cout << "Da giac sau khi quay: " << endl;
-    for (int i = 0; i < this->so_luong_diem; i++)
+    for (int i = 0; i < this->SoLuongDiem; i++)
     {
         cout << "Dinh "
              << "thu " << i + 1 << endl;
@@ -73,7 +73,7 @@ void DaGiac::phongto_thunho()
         k = -k;
     }
 
-    for (int i = 0; i < so_luong_diem; i++)
+    for (int i = 0; i < SoLuongDiem; i++)
     {
         cout << "Dinh "
              << "thu " << i + 1 << endl;
