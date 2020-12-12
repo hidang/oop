@@ -1,3 +1,3 @@
 # oop
 
-Lập trình hướng đối tượng
+Thư mục lưu trữ bài tập môn học Lập trình hướng đối tượng.
